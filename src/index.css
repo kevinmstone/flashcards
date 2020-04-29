@@ -1,0 +1,35 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.kanji-list-item {
+  font-size: 1.2em
+}
+
+.kanji-list-item a {
+  font-size: 0.6em
+}
+
+.card {
+  position: relative;
+}
+
+.card .hide-card {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.card:hover .hide-card {
+  display: block;
+}
