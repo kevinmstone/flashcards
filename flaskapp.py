@@ -92,7 +92,8 @@ app = Flask(__name__, static_url_path='',
                   template_folder='build')
 
 # A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible
-CORS(app, resources={r"/*": {"origins": "*"}})
+# CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)
 
 database = the_path + r"db/kanji_tester.db"
 conn = create_connection(database)
