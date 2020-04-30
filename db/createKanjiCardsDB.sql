@@ -121,3 +121,55 @@ VALUES
   (3, "{'kanji': '', 'wordj': '床', 'hiragana': 'ゆか', 'definition': 'floor'}"),
   (3, "{'kanji': '', 'wordj': '洋間/洋室', 'hiragana': 'ようま/ようしつ', 'definition': 'Western-style room'}"),
   (3, "{'kanji': '', 'wordj': '浴室', 'hiragana': 'よくしつ', 'definition': 'bathing room (room with bathtub/shower)'}");
+
+/* Chapter 2 - Furnishings and Appliances Vocabulary */
+INSERT INTO cards (deck_id, data)
+VALUES
+	(4, "{'kanji': '', 'wordj': 'アイコン', 'hiragana': 'アイコン', 'definition': 'air conditioner'}"),
+	(4, "{'kanji': '', 'wordj': '鏡', 'hiragana': 'かがみ', 'definition': 'mirror'}"),
+	(4, "{'kanji': '', 'wordj': '家具', 'hiragana': 'かぐ', 'definition': 'furniture'}"),
+	(4, "{'kanji': '', 'wordj': 'クーラー', 'hiragana': 'クーラー', 'definition': 'air conditioner'}"),
+	(4, "{'kanji': '', 'wordj': '炊飯器', 'hiragana': 'すいはんき', 'definition': 'rice cooker'}"),
+	(4, "{'kanji': '', 'wordj': 'スタンド', 'hiragana': 'スタンド', 'definition': 'floor lamp, desk lamp'}"),
+	(4, "{'kanji': '', 'wordj': 'ストーブ', 'hiragana': 'ストーブ', 'definition': 'space heater'}"),
+	(4, "{'kanji': '', 'wordj': '洗濯機', 'hiragana': 'せんたくき', 'definition': 'washing machine'}"),
+	(4, "{'kanji': '', 'wordj': '扇風機', 'hiragana': 'せんぷうき', 'definition': 'electric fan'}"),
+	(4, "{'kanji': '', 'wordj': '掃除機', 'hiragana': 'そうじき', 'definition': 'vacuum cleaner'}"),
+	(4, "{'kanji': '', 'wordj': 'たんす', 'hiragana': 'たんす', 'definition': 'chest of drawers'}"),
+	(4, "{'kanji': '', 'wordj': '電気', 'hiragana': 'でんき', 'definition': 'electic light, electricity'}"),
+	(4, "{'kanji': '', 'wordj': '電気製品', 'hiragana': 'でんきせいひん', 'definition': 'electric appliance'}"),
+	(4, "{'kanji': '', 'wordj': '電子レンジ', 'hiragana': 'でんしレンジ', 'definition': 'microwave oven'}"),
+	(4, "{'kanji': '', 'wordj': '本棚', 'hiragana': 'ほんだな', 'definition': 'bookshelf'}"),
+	(4, "{'kanji': '', 'wordj': '留守番電話', 'hiragana': 'るすばんでんわ', 'definition': 'answering machine'}"),
+	(4, "{'kanji': '', 'wordj': '冷蔵庫', 'hiragana': 'れいぞうこ', 'definition': 'refrigerator'}");
+
+/* Chapter 2 - Household Chores Vocabulary */
+INSERT INTO cards (deck_id, data)
+VALUES
+	(5, "{'kanji': '', 'wordj': 'アイロンをかける', 'hiragana': 'アイロンをかける', 'definition': 'to iron'}"),
+	(5, "{'kanji': '', 'wordj': '家事', 'hiragana': 'かじ', 'definition': 'housework; household chores'}"),
+	(5, "{'kanji': '', 'wordj': '片付ける', 'hiragana': 'かたづける', 'definition': 'to straighten (something) up; to clear (something) off'}"),
+	(5, "{'kanji': '', 'wordj': '洗濯', 'hiragana': 'せんたく', 'definition': '(to do) laundry'}"),
+	(5, "{'kanji': '', 'wordj': '洗濯物', 'hiragana': 'せんたくもの', 'definition': 'laundry (things to be laundered)'}"),
+	(5, "{'kanji': '', 'wordj': '掃除（する）', 'hiragana': 'そうじ（する）', 'definition': 'housecleaning (to clean)'}"),
+	(5, "{'kanji': '', 'wordj': '直す', 'hiragana': 'なおす', 'definition': 'to mend; repair'}"),
+	(5, "{'kanji': '', 'wordj': '庭いじり（する）', 'hiragana': 'にわいじり（する）', 'definition': 'gardening (to do gardening)'}"),
+	(5, "{'kanji': '', 'wordj': '縫い物（をする）', 'hiragana': 'ぬいもの（をする）', 'definition': '(to do) sewing'}"),
+	(5, "{'kanji': '', 'wordj': '掃く', 'hiragana': 'はく', 'definition': 'to sweep'}"),
+	(5, "{'kanji': '', 'wordj': '干す', 'hiragana': '干す', 'definition': 'to air-dry (something); to air (something) out'}"),
+	(5, "{'kanji': '', 'wordj': '磨く', 'hiragana': 'みがく', 'definition': 'to polish'}");
+
+/* Chapter 2 - Verbs Vocabulary */
+INSERT INTO cards (deck_id, data)
+VALUES
+	(6, "{'kanji': '', 'wordj': '入れる', 'hiragana': 'いれる', 'definition': 'to turn on (a switch)'}"),
+	(6, "{'kanji': '', 'wordj': '動かす', 'hiragana': 'うごかす', 'definition': 'to move (something)'}"),
+	(6, "{'kanji': '', 'wordj': '置く', 'hiragana': 'おく', 'definition': 'to put'}"),
+	(6, "{'kanji': '', 'wordj': '貸す', 'hiragana': 'かす', 'definition': 'to lend; to rent out'}"),
+	(6, "{'kanji': '', 'wordj': '借りる', 'hiragana': 'かりる', 'definition': 'to borrow; to rent from'}"),
+	(6, "{'kanji': '', 'wordj': '切る', 'hiragana': 'きる', 'definition': 'to turn off (a switch)'}"),
+	(6, "{'kanji': '', 'wordj': '消す', 'hiragana': 'けす', 'definition': 'to turn off (a light)'}"),
+	(6, "{'kanji': '', 'wordj': '探す', 'hiragana': 'さがす', 'definition': 'to look for'}"),
+	(6, "{'kanji': '', 'wordj': '付ける', 'hiragana': 'つける', 'definition': 'to turn on (a light)'}"),
+	(6, "{'kanji': '', 'wordj': '手伝う', 'hiragana': 'てつだう', 'definition': 'to help; to assist'}"),
+	(6, "{'kanji': '', 'wordj': '運ぶ', 'hiragana': 'はこぶ', 'definition': 'to transport; to carry (a large object)'}");
