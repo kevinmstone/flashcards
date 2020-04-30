@@ -14,7 +14,7 @@ import platform
 prod_path = '/var/www/html/j203/flashcards/'
 local_path = ''
 
-# Darwin->Mac, Linux->Prod 
+# Darwin->Mac, Linux->Prod
 if platform.system() == 'Darwin':
     the_path = local_path
 else:
@@ -48,7 +48,7 @@ def query_cards_from_deck(conn, title):
     cur = conn.cursor()
     cur.execute("select deck_id from decks where title='%s'" % title)
     deck_id = cur.fetchone()
-    cur.execute("SELECT card_id, data from cards where card_id in (select card_id from cards_in_decks where deck_id = '%d')" % deck_id)
+    cur.execute("SELECT card_id, data from cards where deck_id = '%d')" % deck_id)
 
     rows = cur.fetchall()
 

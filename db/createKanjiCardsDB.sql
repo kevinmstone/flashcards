@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS decks;
 DROP TABLE IF EXISTS cards_in_decks;
@@ -13,29 +12,38 @@ INSERT INTO classes (title)
 VALUES
 	("J203");
 
-/* CHECK (REGEXP_LIKE (EMAIL,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$')); */
-CREATE TABLE users (
-	user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name TEXT NOT NULL,
-	email TEXT NOT NULL UNIQUE
-);
+	CREATE TABLE decks (
+		deck_id INTEGER PRIMARY KEY AUTOINCREMENT,
+		class_id INTEGER NOT NULL,
+	  title TEXT NOT NULL,
+	  topic1 TEXT NOT NULL,
+	  topic2 TEXT NOT NULL,
+		FOREIGN KEY (class_id)
+			REFERENCES classes (class_id)
+				ON UPDATE RESTRICT
+				ON DELETE RESTRICT
+	);
 
-INSERT INTO users (name, email)
-VALUES
-  ('Kevin Stone', 'kevin.x.stone@gmail.com'),
-  ('Bob Walters', 'bob@lessoneer.com');
+	INSERT INTO decks (class_id, title, topic1, topic2)
+	VALUES
+	  (1, "Kanji 2A,2B", "Kanji", "Chapter 2"),
+	  (1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
+		(1, "Housing", "Vocabulary", "Chapter 2"),
+		(1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
+		(1, "Household Chores", "Vocabulary", "Chapter 2"),
+		(1, "Verbs", "Vocabulary", "Chapter 2");
 
 CREATE TABLE cards (
 	card_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER NOT NULL,
+  deck_id INTEGER NOT NULL,
 	data BLOB NOT NULL,
-  FOREIGN KEY (user_id)
-    REFERENCES users (user_id)
+  FOREIGN KEY (deck_id)
+    REFERENCES decks (user_id)
       ON UPDATE RESTRICT
       ON DELETE RESTRICT
 );
 
-INSERT INTO cards (user_id, data)
+INSERT INTO cards (deck_id, data)
 VALUES
   (1, "{'kanji': '新', 'wordj': '新しい', 'hiragana': 'あたらしい', 'definition': 'new'}"),
   (1, "{'kanji': '開', 'wordj': '開く', 'hiragana': 'あく', 'definition': 'to open'}"),
@@ -60,177 +68,56 @@ VALUES
   (1, "{'kanji': '庭', 'wordj': '庭', 'hiragana': 'にわ', 'definition': 'garden'}"),
   (1, "{'kanji': '便', 'wordj': '「便」利', 'hiragana': '「べん」り', 'definition': 'convenient'}"),
   (1, "{'kanji': '不', 'wordj': '「不」便', 'hiragana': '「ふ」べん', 'definition': 'inconvenient'}"),
-  (1, "{'kanji': '自', 'wordj': '「自」分で', 'hiragana': '「じ」ぶんで', 'definition': 'on ones own'}"),
-  (1, "{'kanji': '路', 'wordj': '道「路」', 'hiragana': 'どう「ろ」', 'definition': 'road'}"),
-  (1, "{'kanji': '交', 'wordj': '「交」通', 'hiragana': '「こう」つう', 'definition': 'traffic / transportation'}"),
-  (1, "{'kanji': '通', 'wordj': '通る', 'hiragana': 'とおる', 'definition': 'to pass through'}"),
-  (1, "{'kanji': '転', 'wordj': '運「転」', 'hiragana': 'うん「てん」', 'definition': 'driving'}"),
-  (1, "{'kanji': '駐', 'wordj': '「駐」車場', 'hiragana': '「ちゅう」しゃじょう', 'definition': 'parking lot'}"),
-  (1, "{'kanji': '教', 'wordj': '教える', 'hiragana': 'おしえる', 'definition': 'teach / explain'}"),
-  (1, "{'kanji': '窓', 'wordj': '窓', 'hiragana': 'まど', 'definition': 'window'}"),
-  (1, "{'kanji': '閉', 'wordj': '閉める', 'hiragana': 'しめる', 'definition': 'close / shut'}"),
-  (1, "{'kanji': '消', 'wordj': '消す', 'hiragana': 'けす', 'definition': 'extinguish / turn off (a light) / erase / cancel out'}"),
-  (1, "{'kanji': '変', 'wordj': '変える', 'hiragana': 'かえる', 'definition': 'change'}"),
-  (1, "{'kanji': '故', 'wordj': '事「故」', 'hiragana': 'じ「こ」', 'definition': 'accident'}"),
-  (1, "{'kanji': '差', 'wordj': '交「差」点', 'hiragana': 'こう「さ」てん', 'definition': 'intersection'}"),
-  (1, "{'kanji': '点', 'wordj': '百「点」', 'hiragana': 'ひゃく「てん」', 'definition': '100 points'}"),
-  (1, "{'kanji': '信', 'wordj': '「信」号', 'hiragana': '「しん」ごう', 'definition': 'traffic light'}"),
-  (1, "{'kanji': '走', 'wordj': '走る', 'hiragana': 'はしる', 'definition': 'to run'}"),
-  (1, "{'kanji': '帰', 'wordj': '帰る', 'hiragana': 'かえる', 'definition': 'return'}"),
-  (1, "{'kanji': '横', 'wordj': '横', 'hiragana': 'よこ', 'definition': 'side / horizontal direction'}"),
-  (1, "{'kanji': '働', 'wordj': '働く', 'hiragana': 'はたらく', 'definition': 'work'}"),
-  (1, "{'kanji': '工', 'wordj': '「工」事中', 'hiragana': '「こう」じちゅう', 'definition': 'under construction'}"),
-  (1, "{'kanji': '速', 'wordj': '速い', 'hiragana': 'はやい', 'definition': 'fast'}"),
-  (1, "{'kanji': '違', 'wordj': '違う', 'hiragana': 'ちがう', 'definition': 'be different / be mistaken'}"),
-  (1, "{'kanji': '反', 'wordj': '「反」対', 'hiragana': '「はん」たい', 'definition': 'against'}");
+  (2, "{'kanji': '自', 'wordj': '「自」分で', 'hiragana': '「じ」ぶんで', 'definition': 'on ones own'}"),
+  (2, "{'kanji': '路', 'wordj': '道「路」', 'hiragana': 'どう「ろ」', 'definition': 'road'}"),
+  (2, "{'kanji': '交', 'wordj': '「交」通', 'hiragana': '「こう」つう', 'definition': 'traffic / transportation'}"),
+  (2, "{'kanji': '通', 'wordj': '通る', 'hiragana': 'とおる', 'definition': 'to pass through'}"),
+  (2, "{'kanji': '転', 'wordj': '運「転」', 'hiragana': 'うん「てん」', 'definition': 'driving'}"),
+  (2, "{'kanji': '駐', 'wordj': '「駐」車場', 'hiragana': '「ちゅう」しゃじょう', 'definition': 'parking lot'}"),
+  (2, "{'kanji': '教', 'wordj': '教える', 'hiragana': 'おしえる', 'definition': 'teach / explain'}"),
+  (2, "{'kanji': '窓', 'wordj': '窓', 'hiragana': 'まど', 'definition': 'window'}"),
+  (2, "{'kanji': '閉', 'wordj': '閉める', 'hiragana': 'しめる', 'definition': 'close / shut'}"),
+  (2, "{'kanji': '消', 'wordj': '消す', 'hiragana': 'けす', 'definition': 'extinguish / turn off (a light) / erase / cancel out'}"),
+  (2, "{'kanji': '変', 'wordj': '変える', 'hiragana': 'かえる', 'definition': 'change'}"),
+  (2, "{'kanji': '故', 'wordj': '事「故」', 'hiragana': 'じ「こ」', 'definition': 'accident'}"),
+  (2, "{'kanji': '差', 'wordj': '交「差」点', 'hiragana': 'こう「さ」てん', 'definition': 'intersection'}"),
+  (2, "{'kanji': '点', 'wordj': '百「点」', 'hiragana': 'ひゃく「てん」', 'definition': '100 points'}"),
+  (2, "{'kanji': '信', 'wordj': '「信」号', 'hiragana': '「しん」ごう', 'definition': 'traffic light'}"),
+  (2, "{'kanji': '走', 'wordj': '走る', 'hiragana': 'はしる', 'definition': 'to run'}"),
+  (2, "{'kanji': '帰', 'wordj': '帰る', 'hiragana': 'かえる', 'definition': 'return'}"),
+  (2, "{'kanji': '横', 'wordj': '横', 'hiragana': 'よこ', 'definition': 'side / horizontal direction'}"),
+  (2, "{'kanji': '働', 'wordj': '働く', 'hiragana': 'はたらく', 'definition': 'work'}"),
+  (2, "{'kanji': '工', 'wordj': '「工」事中', 'hiragana': '「こう」じちゅう', 'definition': 'under construction'}"),
+  (2, "{'kanji': '速', 'wordj': '速い', 'hiragana': 'はやい', 'definition': 'fast'}"),
+  (2, "{'kanji': '違', 'wordj': '違う', 'hiragana': 'ちがう', 'definition': 'be different / be mistaken'}"),
+  (2, "{'kanji': '反', 'wordj': '「反」対', 'hiragana': '「はん」たい', 'definition': 'against'}");
 
-CREATE TABLE decks (
-	deck_id INTEGER PRIMARY KEY AUTOINCREMENT,
-	class_id INTEGER NOT NULL,
-	user_id INTEGER NOT NULL,
-  title TEXT NOT NULL,
-  topic1 TEXT NOT NULL,
-  topic2 TEXT NOT NULL,
-	FOREIGN KEY (class_id)
-		REFERENCES classes (class_id)
-			ON UPDATE RESTRICT
-			ON DELETE RESTRICT
-  FOREIGN KEY (user_id)
-    REFERENCES users (user_id)
-      ON UPDATE RESTRICT
-      ON DELETE RESTRICT
-);
-
-INSERT INTO decks (class_id, user_id, title, topic1, topic2)
+/* Chapter 2 - Housing Vocabulary */
+INSERT INTO cards (deck_id, data)
 VALUES
-  (1, 1, "Kanji 2A,2B", "Kanji", "Chapter 2"),
-  (1, 1, "Kanji 3A,3B", "Kanji", "Chapter 3");
-
-CREATE TABLE cards_in_decks (
-  deck_id INTEGER NOT NULL,
-  card_id INTEGER NOT NULL,
-  FOREIGN KEY (card_id)
-    REFERENCES cards (card_id)
-      ON UPDATE RESTRICT
-      ON DELETE RESTRICT
-  FOREIGN KEY (deck_id)
-    REFERENCES decks (deck_id)
-      ON UPDATE RESTRICT
-      ON DELETE RESTRICT
-);
-
-INSERT INTO cards_in_decks (deck_id, card_id)
-VALUES
-  (1, 1),
-  (1, 2),
-  (1, 3),
-  (1, 4),
-  (1, 5),
-  (1, 6),
-  (1, 7),
-  (1, 8),
-  (1, 9),
-  (1, 10),
-  (1, 11),
-  (1, 12),
-  (1, 13),
-  (1, 14),
-  (1, 15),
-  (1, 16),
-  (1, 17),
-  (1, 18),
-  (1, 19),
-  (1, 20),
-  (1, 21),
-  (1, 22),
-  (1, 23),
-  (2, 24),
-  (2, 25),
-  (2, 26),
-  (2, 27),
-  (2, 28),
-  (2, 29),
-  (2, 30),
-  (2, 31),
-  (2, 32),
-  (2, 33),
-  (2, 34),
-  (2, 35),
-  (2, 36),
-  (2, 37),
-  (2, 38),
-  (2, 39),
-  (2, 40),
-  (2, 41),
-  (2, 42),
-  (2, 43),
-  (2, 44),
-  (2, 45),
-  (2, 46);
-
-/* Add Vocabulary Cards */
-
-INSERT INTO cards (user_id, data)
-VALUES
-  (1, "{'kanji': '', 'wordj': '居間', 'hiragana': 'いま', 'definition': 'living room'}"),
-  (1, "{'kanji': '', 'wordj': 'お手洗い', 'hiragana': 'おてあらい', 'definition': 'restroom'}"),
-  (1, "{'kanji': '', 'wordj': '階段', 'hiragana': 'かいだん', 'definition': 'stairway'}"),
-  (1, "{'kanji': '', 'wordj': '客間', 'hiragana': 'きゃくま', 'definition': 'sitting room for entertaining guests'}"),
-  (1, "{'kanji': '', 'wordj': '応接間', 'hiragana': 'おうせつま', 'definition': 'Western-style room for entertaining guests'}"),
-  (1, "{'kanji': '', 'wordj': '玄関', 'hiragana': 'げんかん', 'definition': 'entry hall; foyer'}"),
-  (1, "{'kanji': '', 'wordj': '建築家', 'hiragana': 'けんちくか', 'definition': 'architect'}"),
-  (1, "{'kanji': '', 'wordj': '住宅', 'hiragana': 'じゅうたく', 'definition': 'residence; housing'}"),
-  (1, "{'kanji': '', 'wordj': '寝室', 'hiragana': 'しんしつ', 'definition': 'bedroom'}"),
-  (1, "{'kanji': '', 'wordj': '住む', 'hiragana': 'すむ', 'definition': 'to live; to reside'}"),
-  (1, "{'kanji': '', 'wordj': '洗面所', 'hiragana': 'せんめんじょ', 'definition': 'washstand'}"),
-  (1, "{'kanji': '', 'wordj': '大工', 'hiragana': 'だいく', 'definition': 'carpenter'}"),
-  (1, "{'kanji': '', 'wordj': '建てる', 'hiragana': 'たてる', 'definition': 'to build'}"),
-  (1, "{'kanji': '', 'wordj': '団地', 'hiragana': 'だんち', 'definition': 'public housing development; apartment complex'}"),
-  (1, "{'kanji': '', 'wordj': '天井', 'hiragana': 'てんじょう', 'definition': 'ceiling'}"),
-  (1, "{'kanji': '', 'wordj': '戸', 'hiragana': 'と', 'definition': 'door'}"),
-  (1, "{'kanji': '', 'wordj': '二階建て', 'hiragana': 'にかいだて', 'definition': 'two-story'}"),
-  (1, "{'kanji': '', 'wordj': '日本間/和室', 'hiragana': 'にほんま/わしつ', 'definition': 'Japanese-style room'}"),
-  (1, "{'kanji': '', 'wordj': '庭', 'hiragana': 'にわ', 'definition': 'garden; yard'}"),
-  (1, "{'kanji': '', 'wordj': '部屋', 'hiragana': 'へや', 'definition': 'room'}"),
-  (1, "{'kanji': '', 'wordj': '...間', 'hiragana': '...ま', 'definition': 'counter for rooms'}"),
-  (1, "{'kanji': '', 'wordj': '門', 'hiragana': 'もん', 'definition': 'gate'}"),
-  (1, "{'kanji': '', 'wordj': '屋根', 'hiragana': 'やね', 'definition': 'roof'}"),
-  (1, "{'kanji': '', 'wordj': '床', 'hiragana': 'ゆか', 'definition': 'floor'}"),
-  (1, "{'kanji': '', 'wordj': '洋間/洋室', 'hiragana': 'ようま/ようしつ', 'definition': 'Western-style room'}"),
-  (1, "{'kanji': '', 'wordj': '浴室', 'hiragana': 'よくしつ', 'definition': 'bathing room (room with bathtub/shower)'}");
-
-INSERT INTO decks (class_id, user_id, title, topic1, topic2)
-VALUES
-  (1, 1, "Housing", "Vocabulary", "Chapter 2"),
-  (1, 1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
-  (1, 1, "Household Chores", "Vocabulary", "Chapter 2"),
-	(1, 1, "Verbs", "Vocabulary", "Chapter 2");
-
-INSERT INTO cards_in_decks (deck_id, card_id)
-VALUES
-  (3, 47),
-  (3, 48),
-  (3, 49),
-  (3, 50),
-  (3, 51),
-  (3, 52),
-  (3, 53),
-  (3, 54),
-  (3, 55),
-  (3, 56),
-  (3, 57),
-  (3, 58),
-  (3, 59),
-  (3, 60),
-  (3, 61),
-  (3, 62),
-  (3, 63),
-  (3, 64),
-  (3, 65),
-  (3, 66),
-  (3, 67),
-  (3, 68),
-  (3, 69),
-  (3, 70),
-  (3, 71),
-  (3, 72);
+  (3, "{'kanji': '', 'wordj': '居間', 'hiragana': 'いま', 'definition': 'living room'}"),
+  (3, "{'kanji': '', 'wordj': 'お手洗い', 'hiragana': 'おてあらい', 'definition': 'restroom'}"),
+  (3, "{'kanji': '', 'wordj': '階段', 'hiragana': 'かいだん', 'definition': 'stairway'}"),
+  (3, "{'kanji': '', 'wordj': '客間', 'hiragana': 'きゃくま', 'definition': 'sitting room for entertaining guests'}"),
+  (3, "{'kanji': '', 'wordj': '応接間', 'hiragana': 'おうせつま', 'definition': 'Western-style room for entertaining guests'}"),
+  (3, "{'kanji': '', 'wordj': '玄関', 'hiragana': 'げんかん', 'definition': 'entry hall; foyer'}"),
+  (3, "{'kanji': '', 'wordj': '建築家', 'hiragana': 'けんちくか', 'definition': 'architect'}"),
+  (3, "{'kanji': '', 'wordj': '住宅', 'hiragana': 'じゅうたく', 'definition': 'residence; housing'}"),
+  (3, "{'kanji': '', 'wordj': '寝室', 'hiragana': 'しんしつ', 'definition': 'bedroom'}"),
+  (3, "{'kanji': '', 'wordj': '住む', 'hiragana': 'すむ', 'definition': 'to live; to reside'}"),
+  (3, "{'kanji': '', 'wordj': '洗面所', 'hiragana': 'せんめんじょ', 'definition': 'washstand'}"),
+  (3, "{'kanji': '', 'wordj': '大工', 'hiragana': 'だいく', 'definition': 'carpenter'}"),
+  (3, "{'kanji': '', 'wordj': '建てる', 'hiragana': 'たてる', 'definition': 'to build'}"),
+  (3, "{'kanji': '', 'wordj': '団地', 'hiragana': 'だんち', 'definition': 'public housing development; apartment complex'}"),
+  (3, "{'kanji': '', 'wordj': '天井', 'hiragana': 'てんじょう', 'definition': 'ceiling'}"),
+  (3, "{'kanji': '', 'wordj': '戸', 'hiragana': 'と', 'definition': 'door'}"),
+  (3, "{'kanji': '', 'wordj': '二階建て', 'hiragana': 'にかいだて', 'definition': 'two-story'}"),
+  (3, "{'kanji': '', 'wordj': '日本間/和室', 'hiragana': 'にほんま/わしつ', 'definition': 'Japanese-style room'}"),
+  (3, "{'kanji': '', 'wordj': '庭', 'hiragana': 'にわ', 'definition': 'garden; yard'}"),
+  (3, "{'kanji': '', 'wordj': '部屋', 'hiragana': 'へや', 'definition': 'room'}"),
+  (3, "{'kanji': '', 'wordj': '...間', 'hiragana': '...ま', 'definition': 'counter for rooms'}"),
+  (3, "{'kanji': '', 'wordj': '門', 'hiragana': 'もん', 'definition': 'gate'}"),
+  (3, "{'kanji': '', 'wordj': '屋根', 'hiragana': 'やね', 'definition': 'roof'}"),
+  (3, "{'kanji': '', 'wordj': '床', 'hiragana': 'ゆか', 'definition': 'floor'}"),
+  (3, "{'kanji': '', 'wordj': '洋間/洋室', 'hiragana': 'ようま/ようしつ', 'definition': 'Western-style room'}"),
+  (3, "{'kanji': '', 'wordj': '浴室', 'hiragana': 'よくしつ', 'definition': 'bathing room (room with bathtub/shower)'}");
