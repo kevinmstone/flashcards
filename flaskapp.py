@@ -48,7 +48,7 @@ def query_cards_from_deck(conn, title):
     cur = conn.cursor()
     cur.execute("select deck_id from decks where title='%s'" % title)
     deck_id = cur.fetchone()
-    cur.execute("SELECT card_id, data from cards where deck_id = '%d')" % deck_id)
+    cur.execute("SELECT card_id, data from cards where deck_id = '%d'" % deck_id)
 
     rows = cur.fetchall()
 
