@@ -249,15 +249,19 @@ class KanjiTester extends React.Component {
 	  <optgroup label="Chapter 2">
             <option value="Kanji 2A,2B">Kanji 2A,2B</option>
 	  </optgroup>
-          <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary">
+    <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary">
 	    <option value="Housing">&nbsp;&nbsp;&nbsp;&nbsp;Housing</option>
       <option value="FA">&nbsp;&nbsp;&nbsp;&nbsp;Furnishings and Appliances</option>
       <option value="HC">&nbsp;&nbsp;&nbsp;&nbsp;Household Chores</option>
-      <option value="Verbs">&nbsp;&nbsp;&nbsp;&nbsp;Verbs</option>
+      <option value="Ch2Verbs">&nbsp;&nbsp;&nbsp;&nbsp;Verbs</option>
 	  </optgroup>
 	  <optgroup label="Chapter 3">
             <option value="Kanji 3A,3B">Kanji 3A,3B</option>
 	  </optgroup>
+    <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary">
+      <option value="Transitive">&nbsp;&nbsp;&nbsp;&nbsp;Transitive Verbs</option>
+      <option value="Intransitive">&nbsp;&nbsp;&nbsp;&nbsp;Intransitive Verbs</option>
+    </optgroup>
         </select>
         <div className="flex flex-wrap items-stretch">
           {list}

@@ -103,8 +103,8 @@ vocab_housing = query_cards_from_deck(conn, "Housing")
 vocab_fa = query_cards_from_deck(conn, "Furnishings and Appliances")
 vocab_hc = query_cards_from_deck(conn, "Household Chores")
 vocab_verbs = query_cards_from_deck(conn, "Verbs")
-vocab_tv = query_cards_from_deck(conn, "Transitive")
-vocab_itv = query_cards_from_deck(conn, "Intransitive")
+vocab_tv = query_cards_from_deck(conn, "Transitive Verbs")
+vocab_itv = query_cards_from_deck(conn, "Intransitive Verbs")
 
 invalid_list = [{'id': 9999, 'kanji': 'Invalid', 'wordj': 'Invalid', 'hiragana': 'Invalid', 'definition': "Invalid", 'unicode': 0000}]
 
