@@ -103,6 +103,8 @@ vocab_housing = query_cards_from_deck(conn, "Housing")
 vocab_fa = query_cards_from_deck(conn, "Furnishings and Appliances")
 vocab_hc = query_cards_from_deck(conn, "Household Chores")
 vocab_verbs = query_cards_from_deck(conn, "Verbs")
+vocab_tv = query_cards_from_deck(conn, "Transitive")
+vocab_itv = query_cards_from_deck(conn, "Intransitive")
 
 invalid_list = [{'id': 9999, 'kanji': 'Invalid', 'wordj': 'Invalid', 'hiragana': 'Invalid', 'definition': "Invalid", 'unicode': 0000}]
 
@@ -112,6 +114,8 @@ vocab_housing = addUnicode(vocab_housing)
 vocab_fa = addUnicode(vocab_fa)
 vocab_hc = addUnicode(vocab_hc)
 vocab_verbs = addUnicode(vocab_verbs)
+vocab_tv = addUnicode(vocab_tv)
+vocab_itv = addUnicode(vocab_itv)
 
 @app.route("/")
 def index():
@@ -134,8 +138,12 @@ def api_hello():
         words = vocab_fa
     elif version == 'HC':
         words = vocab_hc
-    elif version == 'Verbs':
+    elif version == 'Ch2Verbs':
         words = vocab_verbs
+    elif version == 'Transitive':
+            words = vocab_tv
+    elif version == 'Intransitive':
+        words = vocab_itv
     else:
         words = invalid_list
 

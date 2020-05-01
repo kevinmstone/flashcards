@@ -27,11 +27,13 @@ VALUES
 	INSERT INTO decks (class_id, title, topic1, topic2)
 	VALUES
 	  (1, "Kanji 2A,2B", "Kanji", "Chapter 2"),
-	  (1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
 		(1, "Housing", "Vocabulary", "Chapter 2"),
 		(1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
 		(1, "Household Chores", "Vocabulary", "Chapter 2"),
-		(1, "Verbs", "Vocabulary", "Chapter 2");
+		(1, "Verbs", "Vocabulary", "Chapter 2"),
+		(1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
+		(1, "Transitive Verbs", "Vocabulary", "Chapter 3"),
+		(1, "Intransitive Verbs", "Vocabulary", "Chapter 3");
 
 CREATE TABLE cards (
 	card_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -173,3 +175,79 @@ VALUES
 	(6, "{'kanji': '', 'wordj': '付ける', 'hiragana': 'つける', 'definition': 'to turn on (a light)'}"),
 	(6, "{'kanji': '', 'wordj': '手伝う', 'hiragana': 'てつだう', 'definition': 'to help; to assist'}"),
 	(6, "{'kanji': '', 'wordj': '運ぶ', 'hiragana': 'はこぶ', 'definition': 'to transport; to carry (a large object)'}");
+
+/* Chapter 3 - Transitive Verbs Vocabulary */
+INSERT INTO cards (deck_id, data)
+VALUES
+	(7, "{'kanji': '上', 'wordj': '上げる', 'hiragana': 'あげる', 'definition': 'to raise'}"),
+	(7, "{'kanji': '開', 'wordj': '開ける', 'hiragana': 'あける', 'definition': 'to open (something)'}"),
+	(7, "{'kanji': '集', 'wordj': '集める', 'hiragana': 'あつめる', 'definition': 'to gather (things, people) together; to collect)'}"),
+	(7, "{'kanji': '出', 'wordj': '出す', 'hiragana': 'だす', 'definition': 'to put out; to take out'}"),
+	(7, "{'kanji': '始', 'wordj': '始める', 'hiragana': 'はじめる', 'definition': 'to begin (something)'}"),
+	(7, "{'kanji': '入', 'wordj': '入れる', 'hiragana': 'いれる', 'definition': 'to put in; to insert; to include'}"),
+	(7, "{'kanji': '返', 'wordj': '返す', 'hiragana': 'かえす', 'definition': 'to return (something); to give back'}"),
+	(7, "{'kanji': '帰', 'wordj': '帰る', 'hiragana': 'かえる', 'definition': 'to return (something); to give back'}"),
+	(7, "{'kanji': '間違', 'wordj': '間違える', 'hiragana': 'まちがえる', 'definition': 'to make a mistake (about something)'}"),
+	(7, "{'kanji': '見', 'wordj': '見つける', 'hiragana': 'みつける', 'definition': 'to find'}"),
+	(7, "{'kanji': '直', 'wordj': '直す', 'hiragana': 'なおす', 'definition': 'to fix'}"),
+	(7, "{'kanji': '残', 'wordj': '残す', 'hiragana': 'のこす', 'definition': 'to leave behind'}"),
+	(7, "{'kanji': '落', 'wordj': '落とす', 'hiragana': 'おとす', 'definition': 'to drop (something)'}"),
+	(7, "{'kanji': '終', 'wordj': '終わる', 'hiragana': 'おわる', 'definition': 'to end (something)'}"),
+	(7, "{'kanji': '終', 'wordj': '終える', 'hiragana': 'おえる', 'definition': 'to end (something)'}"),
+	(7, "{'kanji': '下', 'wordj': '下げる', 'hiragana': 'さげる', 'definition': 'to lower (something)'}"),
+	(7, "{'kanji': '閉', 'wordj': '閉める', 'hiragana': 'しめる', 'definition': 'to close (something)'}"),
+	(7, "{'kanji': '起', 'wordj': '起こす', 'hiragana': 'おこす', 'definition': 'to wake (someone) up'}"),
+	(7, "{'kanji': '', 'wordj': 'かける', 'hiragana': 'かける', 'definition': 'to hang (something) on; to lay (something) on (something else)'}"),
+	(7, "{'kanji': '付', 'wordj': '付ける', 'hiragana': 'つける', 'definition': 'to attach; to turn (something) on'}"),
+	(7, "{'kanji': '消', 'wordj': '消す', 'hiragana': 'けす', 'definition': 'to extinguish; to put out'}"),
+	(7, "{'kanji': '並', 'wordj': '並べる', 'hiragana': 'ならべる', 'definition': 'to line (things) up'}"),
+	(7, "{'kanji': '止', 'wordj': '止める', 'hiragana': 'とめる', 'definition': 'to stop (something)'}"),
+	(7, "{'kanji': '動', 'wordj': '動かす', 'hiragana': 'うごかす', 'definition': 'to set in motion; to move (something)'}"),
+	(7, "{'kanji': '乗', 'wordj': '乗せる', 'hiragana': 'のせる', 'definition': 'to put on a vehicle; to give a ride to'}"),
+	(7, "{'kanji': '寝', 'wordj': '寝かす', 'hiragana': 'ねかす', 'definition': 'to put to bed'}"),
+	(7, "{'kanji': '無', 'wordj': '無くす', 'hiragana': 'なくす', 'definition': 'to lose'}"),
+	(7, "{'kanji': '壊', 'wordj': '壊す', 'hiragana': 'こわす', 'definition': 'to break (something)'}"),
+	(7, "{'kanji': '立', 'wordj': '立てる', 'hiragana': 'たてる', 'definition': 'to erect; to build'}"),
+	(7, "{'kanji': '建', 'wordj': '建てる', 'hiragana': 'たてる', 'definition': 'to erect; to build'}"),
+	(7, "{'kanji': '通', 'wordj': '通す', 'hiragana': 'とおす', 'definition': 'to send through; to allow to pass through'}"),
+	(7, "{'kanji': '回', 'wordj': '回す', 'hiragana': 'まわす', 'definition': 'to turn (something); to send around'}"),
+	(7, "{'kanji': '切', 'wordj': '切る', 'hiragana': 'きる', 'definition': 'to cut'}"),
+	(7, "{'kanji': '切', 'wordj': '切らす', 'hiragana': 'きらす', 'definition': 'to run out of; to use up'}"),
+	(7, "{'kanji': '変', 'wordj': '変える', 'hiragana': 'かえる', 'definition': 'to change (something)'}");
+
+/* Chapter 3 - Intransitive Verbs Vocabulary */
+INSERT INTO cards (deck_id, data)
+VALUES
+  (8, "{'kanji': '上', 'wordj': '上がる', 'hiragana': 'あがる', 'definition': 'to rise; to go up'}"),
+  (8, "{'kanji': '開', 'wordj': '開く', 'hiragana': 'あく', 'definition': 'to open (by itself)'}"),
+  (8, "{'kanji': '集', 'wordj': '集まる', 'hiragana': '集まる', 'definition': 'to gather together; to congregate'}"),
+  (8, "{'kanji': '出', 'wordj': '出る', 'hiragana': 'でる', 'definition': 'to come/go out; to appear'}"),
+  (8, "{'kanji': '始', 'wordj': '始まる', 'hiragana': 'はじまる', 'definition': 'to begin'}"),
+  (8, "{'kanji': '入', 'wordj': '入る', 'hiragana': 'はいる', 'definition': 'to enter; to be included; to fit inside'}"),
+  (8, "{'kanji': '返', 'wordj': '返る', 'hiragana': 'かえる', 'definition': 'to return (home); to come back'}"),
+  (8, "{'kanji': '帰', 'wordj': '帰る', 'hiragana': 'かえる', 'definition': 'to return (home); to come back'}"),
+  (8, "{'kanji': '間違', 'wordj': '間違う', 'hiragana': 'まちがう', 'definition': 'to be in error'}"),
+  (8, "{'kanji': '見', 'wordj': '見たかる', 'hiragana': 'みつかる', 'definition': 'to be found'}"),
+  (8, "{'kanji': '直', 'wordj': '直る', 'hiragana': 'なおる', 'definition': 'to get better'}"),
+  (8, "{'kanji': '残', 'wordj': '残る', 'hiragana': 'のこる', 'definition': 'to be left; to remain'}"),
+  (8, "{'kanji': '落', 'wordj': ''落ちる, 'hiragana': 'おちる', 'definition': 'to fall (from a height)'}"),
+  (8, "{'kanji': '終', 'wordj': '終わる', 'hiragana': 'おわる', 'definition': 'to (come to an) end'}"),
+  (8, "{'kanji': '下', 'wordj': '下がる', 'hiragana': 'さがる', 'definition': 'to go down; to dangle'}"),
+  (8, "{'kanji': '閉', 'wordj': '閉まる', 'hiragana': 'しまる', 'definition': 'to close'}"),
+  (8, "{'kanji': '起', 'wordj': '起きる', 'hiragana': 'おきる', 'definition': 'to wake up'}"),
+  (8, "{'kanji': '', 'wordj': 'かかる', 'hiragana': 'かかる', 'definition': 'to hang (on a vertical surface); to lean; to take (time, money, etc)'}"),
+  (8, "{'kanji': '付', 'wordj': '付く', 'hiragana': 'つく', 'definition': 'to stick; to become attached; to go on'}"),
+  (8, "{'kanji': '消', 'wordj': '消える', 'hiragana': 'きえる', 'definition': 'to be extinguised; to go off; to disappear'}"),
+  (8, "{'kanji': '並', 'wordj': '並ぶ', 'hiragana': 'ならぶ', 'definition': 'to get in line'}"),
+  (8, "{'kanji': '止', 'wordj': '止まる', 'hiragana': 'とまる', 'definition': 'to come to a stop'}"),
+  (8, "{'kanji': '動', 'wordj': '動く', 'hiragana': 'うごく', 'definition': 'to move; to be in motion'}"),
+  (8, "{'kanji': '乗', 'wordj': '乗る', 'hiragana': 'のる', 'definition': 'to board a vehicle; to ride'}"),
+  (8, "{'kanji': '寝', 'wordj': '寝る', 'hiragana': 'ねる', 'definition': 'to go to bed; to sleep'}"),
+	(8, "{'kanji': '無', 'wordj': '無くなる', 'hiragana': 'なくなる', 'definition': 'to get lost; to disappear'}"),
+  (8, "{'kanji': '壊', 'wordj': '壊れる', 'hiragana': 'こわれる', 'definition': 'to become broken'}"),
+  (8, "{'kanji': '立', 'wordj': '立つ', 'hiragana': 'たつ', 'definition': 'to stand; to be built'}"),
+  (8, "{'kanji': '建', 'wordj': '建つ', 'hiragana': 'たつ', 'definition': 'to stand; to be built'}"),
+  (8, "{'kanji': '通', 'wordj': '通る', 'hiragana': 'とおる', 'definition': 'to pass through; to go along (a road)'}"),
+  (8, "{'kanji': '回', 'wordj': '回る', 'hiragana': 'まわる', 'definition': 'to turn around; to go around'}"),
+  (8, "{'kanji': '切', 'wordj': '切れる', 'hiragana': 'きれる', 'definition': 'to be cut; to be used up'}"),
+  (8, "{'kanji': '変', 'wordj': '変わる', 'hiragana': 'かわる', 'definition': 'to (undergo) change'}");
