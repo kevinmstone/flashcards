@@ -100,12 +100,18 @@ conn = create_connection(database)
 kanji_2a2b = query_cards_from_deck(conn, "Kanji 2A,2B")
 kanji_3a3b = query_cards_from_deck(conn, "Kanji 3A,3B")
 vocab_housing = query_cards_from_deck(conn, "Housing")
+vocab_fa = query_cards_from_deck(conn, "Furnishings and Appliances")
+vocab_hc = query_cards_from_deck(conn, "Household Chores")
+vocab_verbs = query_cards_from_deck(conn, "Verbs")
 
 invalid_list = [{'id': 9999, 'kanji': 'Invalid', 'wordj': 'Invalid', 'hiragana': 'Invalid', 'definition': "Invalid", 'unicode': 0000}]
 
 kanji_2a2b = addUnicode(kanji_2a2b)
 kanji_3a3b = addUnicode(kanji_3a3b)
 vocab_housing = addUnicode(vocab_housing)
+vocab_fa = addUnicode(vocab_fa)
+vocab_hc = addUnicode(vocab_hc)
+vocab_verbs = addUnicode(vocab_verbs)
 
 @app.route("/")
 def index():
@@ -124,6 +130,12 @@ def api_hello():
         words = kanji_3a3b
     elif version == 'Housing':
         words = vocab_housing
+    elif version == 'FA':
+        words = vocab_fa
+    elif version == 'HC':
+        words = vocab_hc
+    elif version == 'Verbs':
+        words = vocab_verbs
     else:
         words = invalid_list
 
