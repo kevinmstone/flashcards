@@ -230,7 +230,7 @@ VALUES
   (8, "{'kanji': '見', 'wordj': '見たかる', 'hiragana': 'みつかる', 'definition': 'to be found'}"),
   (8, "{'kanji': '直', 'wordj': '直る', 'hiragana': 'なおる', 'definition': 'to get better'}"),
   (8, "{'kanji': '残', 'wordj': '残る', 'hiragana': 'のこる', 'definition': 'to be left; to remain'}"),
-  (8, "{'kanji': '落', 'wordj': ''落ちる, 'hiragana': 'おちる', 'definition': 'to fall (from a height)'}"),
+  (8, "{'kanji': '落', 'wordj': ''落ちる', 'hiragana': 'おちる', 'definition': 'to fall (from a height)'}"),
   (8, "{'kanji': '終', 'wordj': '終わる', 'hiragana': 'おわる', 'definition': 'to (come to an) end'}"),
   (8, "{'kanji': '下', 'wordj': '下がる', 'hiragana': 'さがる', 'definition': 'to go down; to dangle'}"),
   (8, "{'kanji': '閉', 'wordj': '閉まる', 'hiragana': 'しまる', 'definition': 'to close'}"),
