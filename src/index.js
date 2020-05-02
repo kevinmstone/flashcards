@@ -248,6 +248,8 @@ class KanjiTester extends React.Component {
         <select value={this.state.version} onChange={this.setVersion}>
 	  <optgroup label="Chapter 2">
             <option value="Kanji 2A,2B">Kanji 2A,2B</option>
+            <option value="Kanji 2A">Kanji 2A (26-37)</option>
+            <option value="Kanji 2B">Kanji 2B (38-49)</option>
 	  </optgroup>
     <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary">
 	    <option value="Housing">&nbsp;&nbsp;&nbsp;&nbsp;Housing</option>
@@ -257,6 +259,8 @@ class KanjiTester extends React.Component {
 	  </optgroup>
 	  <optgroup label="Chapter 3">
             <option value="Kanji 3A,3B">Kanji 3A,3B</option>
+            <option value="Kanji 3A">Kanji 3A (50-61)</option>
+            <option value="Kanji 3B">Kanji 3B (62-73)</option>
 	  </optgroup>
     <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary">
       <option value="Transitive">&nbsp;&nbsp;&nbsp;&nbsp;Transitive Verbs</option>

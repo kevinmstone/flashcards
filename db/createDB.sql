@@ -27,13 +27,17 @@ VALUES
 	INSERT INTO decks (class_id, title, topic1, topic2)
 	VALUES
 	  (1, "Kanji 2A,2B", "Kanji", "Chapter 2"),
-          (1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
-          (1, "Housing", "Vocabulary", "Chapter 2"),
-          (1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
-          (1, "Household Chores", "Vocabulary", "Chapter 2"),
-          (1, "Verbs", "Vocabulary", "Chapter 2"),
-          (1, "Transitive Verbs", "Vocabulary", "Chapter 3"),
-          (1, "Intransitive Verbs", "Vocabulary", "Chapter 3");
+    (1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
+    (1, "Housing", "Vocabulary", "Chapter 2"),
+    (1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
+    (1, "Household Chores", "Vocabulary", "Chapter 2"),
+    (1, "Verbs", "Vocabulary", "Chapter 2"),
+    (1, "Transitive Verbs", "Vocabulary", "Chapter 3"),
+    (1, "Intransitive Verbs", "Vocabulary", "Chapter 3"),
+	  (1, "Kanji 2A (26-37)", "Kanji", "Chapter 2"),
+	  (1, "Kanji 2B (38-49)", "Kanji", "Chapter 2"),
+		(1, "Kanji 3A (50-61)", "Kanji", "Chapter 3"),
+	  (1, "Kanji 3B (62-73)", "Kanji", "Chapter 3");
 
 CREATE TABLE cards (
 	card_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -70,7 +74,40 @@ VALUES
   (1, "{'kanji': '静', 'wordj': '静か', 'hiragana': 'しずか', 'definition': 'quiet'}"),
   (1, "{'kanji': '庭', 'wordj': '庭', 'hiragana': 'にわ', 'definition': 'garden'}"),
   (1, "{'kanji': '便', 'wordj': '「便」利', 'hiragana': '「べん」り', 'definition': 'convenient'}"),
+	(1, "{'kanji': '利', 'wordj': '「利」子', 'hiragana': '「り」し', 'definition': 'interest [on a loan]'}"),
   (1, "{'kanji': '不', 'wordj': '「不」便', 'hiragana': '「ふ」べん', 'definition': 'inconvenient'}");
+
+/* Chapter 2A (26-37) - Kanji */
+INSERT INTO cards (deck_id, data)
+VALUES
+  (9, "{'kanji': '新', 'wordj': '新しい', 'hiragana': 'あたらしい', 'definition': 'new'}"),
+  (9, "{'kanji': '開', 'wordj': '開く', 'hiragana': 'あく', 'definition': 'to open'}"),
+  (9, "{'kanji': '公', 'wordj': '「公」園', 'hiragana': '「こう」えん', 'definition': 'park'}"),
+  (9, "{'kanji': '園', 'wordj': '公「園」', 'hiragana': 'こう「えん」', 'definition': 'park'}"),
+  (9, "{'kanji': '住', 'wordj': '住む', 'hiragana': 'すむ', 'definition': 'to live / reside'}"),
+  (9, "{'kanji': '階', 'wordj': '二「階」', 'hiragana': 'に「かい」', 'definition': '2nd floor'}"),
+  (9, "{'kanji': '広', 'wordj': '広い', 'hiragana': 'ひろい', 'definition': 'wide / spacious'}"),
+  (9, "{'kanji': '直', 'wordj': '直す', 'hiragana': 'なおす', 'definition': 'fix / correct / revise'}"),
+  (9, "{'kanji': '戸', 'wordj': '戸', 'hiragana': 'と', 'definition': 'door'}"),
+  (9, "{'kanji': '古', 'wordj': '古い', 'hiragana': 'ふるい', 'definition': 'old'}"),
+  (9, "{'kanji': '門', 'wordj': '門', 'hiragana': 'もん', 'definition': 'gate'}"),
+  (9, "{'kanji': '室', 'wordj': '室', 'hiragana': 'しつ', 'definition': 'room'}");
+
+/* Chapter 2B (38-49) - Kanji */
+INSERT INTO cards (deck_id, data)
+VALUES
+  (10, "{'kanji': '伝', 'wordj': '伝える', 'hiragana': 'つたえる', 'definition': 'to tell / convey / transmit'}"),
+  (10, "{'kanji': '洗', 'wordj': '洗う', 'hiragana': 'あらう', 'definition': 'to wash'}"),
+  (10, "{'kanji': '建', 'wordj': '建てる', 'hiragana': 'たてる', 'definition': 'to build'}"),
+  (10, "{'kanji': '友', 'wordj': '友', 'hiragana': 'とも', 'definition': 'friend'}"),
+  (10, "{'kanji': '貸', 'wordj': '貸す', 'hiragana': 'かす', 'definition': 'to lend / rent out'}"),
+  (10, "{'kanji': '借', 'wordj': '借りる', 'hiragana': 'かりる', 'definition': 'to borrow'}"),
+  (10, "{'kanji': '置', 'wordj': '置く', 'hiragana': 'おく', 'definition': 'to put / place set / leave behind / leave as is'}"),
+  (10, "{'kanji': '静', 'wordj': '静か', 'hiragana': 'しずか', 'definition': 'quiet'}"),
+  (10, "{'kanji': '庭', 'wordj': '庭', 'hiragana': 'にわ', 'definition': 'garden'}"),
+  (10, "{'kanji': '便', 'wordj': '「便」利', 'hiragana': '「べん」り', 'definition': 'convenient'}"),
+	(10, "{'kanji': '利', 'wordj': '「利」子', 'hiragana': '「り」し', 'definition': 'interest [on a loan]'}"),
+  (10, "{'kanji': '不', 'wordj': '「不」便', 'hiragana': '「ふ」べん', 'definition': 'inconvenient'}");
 
 /* Chapter 3 - Kanji */
 INSERT INTO cards (deck_id, data)
@@ -90,6 +127,7 @@ VALUES
   (2, "{'kanji': '差', 'wordj': '交「差」点', 'hiragana': 'こう「さ」てん', 'definition': 'intersection'}"),
   (2, "{'kanji': '点', 'wordj': '百「点」', 'hiragana': 'ひゃく「てん」', 'definition': '100 points'}"),
   (2, "{'kanji': '信', 'wordj': '「信」号', 'hiragana': '「しん」ごう', 'definition': 'traffic light'}"),
+	(2, "{'kanji': '号', 'wordj': '番「号」', 'hiragana': 'ばん「ごう」', 'definition': 'number in a series'}"),
   (2, "{'kanji': '走', 'wordj': '走る', 'hiragana': 'はしる', 'definition': 'to run'}"),
   (2, "{'kanji': '帰', 'wordj': '帰る', 'hiragana': 'かえる', 'definition': 'return'}"),
   (2, "{'kanji': '横', 'wordj': '横', 'hiragana': 'よこ', 'definition': 'side / horizontal direction'}"),
@@ -98,6 +136,38 @@ VALUES
   (2, "{'kanji': '速', 'wordj': '速い', 'hiragana': 'はやい', 'definition': 'fast'}"),
   (2, "{'kanji': '違', 'wordj': '違う', 'hiragana': 'ちがう', 'definition': 'be different / be mistaken'}"),
   (2, "{'kanji': '反', 'wordj': '「反」対', 'hiragana': '「はん」たい', 'definition': 'against'}");
+
+/* Chapter 3A (50-61) - Kanji */
+INSERT INTO cards (deck_id, data)
+VALUES
+  (11, "{'kanji': '自', 'wordj': '「自」分で', 'hiragana': '「じ」ぶんで', 'definition': 'on ones own'}"),
+  (11, "{'kanji': '路', 'wordj': '道「路」', 'hiragana': 'どう「ろ」', 'definition': 'road'}"),
+  (11, "{'kanji': '交', 'wordj': '「交」通', 'hiragana': '「こう」つう', 'definition': 'traffic / transportation'}"),
+  (11, "{'kanji': '通', 'wordj': '通る', 'hiragana': 'とおる', 'definition': 'to pass through'}"),
+  (11, "{'kanji': '転', 'wordj': '運「転」', 'hiragana': 'うん「てん」', 'definition': 'driving'}"),
+  (11, "{'kanji': '駐', 'wordj': '「駐」車場', 'hiragana': '「ちゅう」しゃじょう', 'definition': 'parking lot'}"),
+  (11, "{'kanji': '教', 'wordj': '教える', 'hiragana': 'おしえる', 'definition': 'teach / explain'}"),
+  (11, "{'kanji': '窓', 'wordj': '窓', 'hiragana': 'まど', 'definition': 'window'}"),
+  (11, "{'kanji': '閉', 'wordj': '閉める', 'hiragana': 'しめる', 'definition': 'close / shut'}"),
+  (11, "{'kanji': '消', 'wordj': '消す', 'hiragana': 'けす', 'definition': 'extinguish / turn off (a light) / erase / cancel out'}"),
+  (11, "{'kanji': '変', 'wordj': '変える', 'hiragana': 'かえる', 'definition': 'change'}"),
+  (11, "{'kanji': '故', 'wordj': '事「故」', 'hiragana': 'じ「こ」', 'definition': 'accident'}");
+
+/* Chapter 3B (62-73) - Kanji */
+INSERT INTO cards (deck_id, data)
+VALUES
+  (12, "{'kanji': '差', 'wordj': '交「差」点', 'hiragana': 'こう「さ」てん', 'definition': 'intersection'}"),
+  (12, "{'kanji': '点', 'wordj': '百「点」', 'hiragana': 'ひゃく「てん」', 'definition': '100 points'}"),
+  (12, "{'kanji': '信', 'wordj': '「信」号', 'hiragana': '「しん」ごう', 'definition': 'traffic light'}"),
+  (12, "{'kanji': '号', 'wordj': '番「号」', 'hiragana': 'ばん「ごう」', 'definition': 'number in a series'}"),
+  (12, "{'kanji': '走', 'wordj': '走る', 'hiragana': 'はしる', 'definition': 'to run'}"),
+  (12, "{'kanji': '帰', 'wordj': '帰る', 'hiragana': 'かえる', 'definition': 'return'}"),
+  (12, "{'kanji': '横', 'wordj': '横', 'hiragana': 'よこ', 'definition': 'side / horizontal direction'}"),
+  (12, "{'kanji': '働', 'wordj': '働く', 'hiragana': 'はたらく', 'definition': 'work'}"),
+  (12, "{'kanji': '工', 'wordj': '「工」事中', 'hiragana': '「こう」じちゅう', 'definition': 'under construction'}"),
+  (12, "{'kanji': '速', 'wordj': '速い', 'hiragana': 'はやい', 'definition': 'fast'}"),
+  (12, "{'kanji': '違', 'wordj': '違う', 'hiragana': 'ちがう', 'definition': 'be different / be mistaken'}"),
+  (12, "{'kanji': '反', 'wordj': '「反」対', 'hiragana': '「はん」たい', 'definition': 'against'}");
 
 /* Chapter 2 - Housing Vocabulary */
 INSERT INTO cards (deck_id, data)

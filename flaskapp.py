@@ -98,7 +98,11 @@ CORS(app)
 database = the_path + r"db/kanji_tester.db"
 conn = create_connection(database)
 kanji_2a2b = query_cards_from_deck(conn, "Kanji 2A,2B")
+kanji_2a = query_cards_from_deck(conn, "Kanji 2A")
+kanji_2b = query_cards_from_deck(conn, "Kanji 2B")
 kanji_3a3b = query_cards_from_deck(conn, "Kanji 3A,3B")
+kanji_3a = query_cards_from_deck(conn, "Kanji 3A")
+kanji_3b = query_cards_from_deck(conn, "Kanji 3B")
 vocab_housing = query_cards_from_deck(conn, "Housing")
 vocab_fa = query_cards_from_deck(conn, "Furnishings and Appliances")
 vocab_hc = query_cards_from_deck(conn, "Household Chores")
@@ -109,7 +113,11 @@ vocab_itv = query_cards_from_deck(conn, "Intransitive Verbs")
 invalid_list = [{'id': 9999, 'kanji': 'Invalid', 'wordj': 'Invalid', 'hiragana': 'Invalid', 'definition': "Invalid", 'unicode': 0000}]
 
 kanji_2a2b = addUnicode(kanji_2a2b)
+kanji_2a = addUnicode(kanji_2a)
+kanji_2b = addUnicode(kanji_2b)
 kanji_3a3b = addUnicode(kanji_3a3b)
+kanji_3a = addUnicode(kanji_3a)
+kanji_3b = addUnicode(kanji_3b)
 vocab_housing = addUnicode(vocab_housing)
 vocab_fa = addUnicode(vocab_fa)
 vocab_hc = addUnicode(vocab_hc)
@@ -130,8 +138,16 @@ def api_hello():
     version = request.args.get('version')
     if version == 'Kanji 2A,2B':
         words = kanji_2a2b
+    elif version == 'Kanji 2A':
+        words = kanji_2a
+    elif version == 'Kanji 2B':
+        words = kanji_2b
     elif version == 'Kanji 3A,3B':
         words = kanji_3a3b
+    elif version == 'Kanji 3A':
+        words = kanji_3a
+    elif version == 'Kanji 3B':
+        words = kanji_3b
     elif version == 'Housing':
         words = vocab_housing
     elif version == 'FA':
