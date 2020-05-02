@@ -26,18 +26,18 @@ VALUES
 
 	INSERT INTO decks (class_id, title, topic1, topic2)
 	VALUES
-	  (1, "Kanji 2A,2B", "Kanji", "Chapter 2"),
-    (1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
-    (1, "Housing", "Vocabulary", "Chapter 2"),
-    (1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
-    (1, "Household Chores", "Vocabulary", "Chapter 2"),
-    (1, "Verbs", "Vocabulary", "Chapter 2"),
-    (1, "Transitive Verbs", "Vocabulary", "Chapter 3"),
-    (1, "Intransitive Verbs", "Vocabulary", "Chapter 3"),
-	  (1, "Kanji 2A (26-37)", "Kanji", "Chapter 2"),
-	  (1, "Kanji 2B (38-49)", "Kanji", "Chapter 2"),
-		(1, "Kanji 3A (50-61)", "Kanji", "Chapter 3"),
-	  (1, "Kanji 3B (62-73)", "Kanji", "Chapter 3");
+          (1, "Kanji 2A,2B", "Kanji", "Chapter 2"),
+          (1, "Kanji 3A,3B", "Kanji", "Chapter 3"),
+          (1, "Housing", "Vocabulary", "Chapter 2"),
+          (1, "Furnishings and Appliances", "Vocabulary", "Chapter 2"),
+          (1, "Household Chores", "Vocabulary", "Chapter 2"),
+          (1, "Verbs", "Vocabulary", "Chapter 2"),
+          (1, "Transitive Verbs", "Vocabulary", "Chapter 3"),
+          (1, "Intransitive Verbs", "Vocabulary", "Chapter 3"),
+          (1, "Kanji 2A", "Kanji", "Chapter 2"),
+          (1, "Kanji 2B", "Kanji", "Chapter 2"),
+          (1, "Kanji 3A", "Kanji", "Chapter 3"),
+          (1, "Kanji 3B", "Kanji", "Chapter 3");
 
 CREATE TABLE cards (
 	card_id INTEGER PRIMARY KEY AUTOINCREMENT,
