@@ -1,3 +1,42 @@
+# Dockerized App
+
+## Install Docker
+
+Install Docker Desktop from [Docker](https://www.docker.com/products/docker-desktop)]
+
+## Commands
+
+Build the app
+```
+docker compose build
+```
+
+Run the app
+```
+docker compose up
+```
+
+## Visiting the App
+
+App up and running?! Excellent! Visit [lcldv.com](https://lcldv.com) or [localhost](http://localhost) to view the app
+
+## Troubleshooting
+
+### Something not reloading?
+
+Try rebuilding the app. Use
+```
+docker compose build && docker compose up
+```
+This will rebuild the app, and start it running again.
+
+### Need to run commands within the app/build environment?
+
+Use `docker exec -it flashcards_app_1 MY_COMMAND`
+
+Example `docker exec -it flashcards_app_1 yarn add some_npm_package`
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
