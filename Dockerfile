@@ -4,7 +4,7 @@ RUN mkdir -p /var/www/current
 WORKDIR /var/www/current
 ADD . /var/www/current/
 
-RUN yarn global add react-scripts
+RUN yarn global add react-scripts react
 RUN yarn install
 
 VOLUME /var/www/current
