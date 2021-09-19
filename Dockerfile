@@ -1,13 +1,23 @@
-FROM node:14-alpine
+# pull the base image
+FROM node:lts-alpine
 
-RUN mkdir -p /var/www/current
-WORKDIR /var/www/current
-ADD . /var/www/current/
+# set the working direction
+WORKDIR /app
 
-RUN yarn global add react-scripts react
-RUN yarn install
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-VOLUME /var/www/current
+# install app dependencies
+COPY package.json ./
+
+COPY yarn.lock ./
+
+RUN yarn global add react-scripts
+
+RUN yarn
+
+# add app
+COPY . ./
 
 EXPOSE 3000
-CMD yarn start
+CMD ["yarn", "start"]
