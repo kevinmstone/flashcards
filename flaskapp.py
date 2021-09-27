@@ -15,10 +15,10 @@ prod_path = '/var/www/html/j203/flashcards/'
 local_path = ''
 
 # Darwin->Mac, Linux->Prod
-if platform.system() == 'Darwin':
-    the_path = local_path
-else:
-    the_path = prod_path
+#if platform.system() == 'Darwin':
+the_path = local_path
+#else:
+    #the_path = prod_path
 
 logging.basicConfig(filename=the_path+'debug1.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
